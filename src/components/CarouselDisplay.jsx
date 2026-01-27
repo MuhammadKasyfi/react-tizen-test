@@ -1,10 +1,12 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Carousel from "./carousel/Carousel.jsx";
 
 import food1 from "../assets/Food1.png";
 import food2 from "../assets/Food2.jpg";
 import food3 from "../assets/Food3.jpg";
 import food4 from "../assets/Food4.jpg";
+import { Cloudinary } from '@cloudinary/url-gen';
+import {AdvancedImage} from '@cloudinary/react';
 
 export default function CarouselDisplay() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -25,6 +27,18 @@ export default function CarouselDisplay() {
     const handleIndexChange = useCallback((index) => {
         setActiveIndex(index);
     }, []);
+
+    // const cld = new Cloudinary({ cloud: { cloudName: 'ddbnfzbgl' } });
+  
+    // const img = cld.image('set1/Food4');
+
+    // const cloudinaryUrl = img.toURL();
+    const cloudinaryUrl = "https://res.cloudinary.com/ddbnfzbgl/image/upload/v1769393076/set1/Food4.jpg";
+
+    useEffect(() => {
+        console.log("Cloudinary URL:", cloudinaryUrl);
+    }, [cloudinaryUrl]);
+
   return (
     <>
         <div className="flex flex-col mt-4 app-container">
@@ -43,7 +57,7 @@ export default function CarouselDisplay() {
                 </div>
             </div>
         </div>
-        {/* <script src="js/script.js"></script> */}
+        <img src={cloudinaryUrl} alt="Food" />
     </>
   )
 }
