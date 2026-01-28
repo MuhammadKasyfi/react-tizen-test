@@ -27,13 +27,12 @@ export default function CarouselDisplay() {
     const handleIndexChange = useCallback((index) => {
         setActiveIndex(index);
     }, []);
-
-    // const cld = new Cloudinary({ cloud: { cloudName: 'ddbnfzbgl' } });
-  
-    // const img = cld.image('set1/Food4');
-
-    // const cloudinaryUrl = img.toURL();
-    const cloudinaryUrl = "https://res.cloudinary.com/ddbnfzbgl/image/upload/v1769393076/set1/Food4.jpg";
+    const cloudinaryUrl = [
+        "https://res.cloudinary.com/ddbnfzbgl/image/upload/set1/Food1",
+        "https://res.cloudinary.com/ddbnfzbgl/image/upload/set2/Food2",
+        "https://res.cloudinary.com/ddbnfzbgl/image/upload/set3/Food3",
+        "https://res.cloudinary.com/ddbnfzbgl/image/upload/set4/Food4",
+    ];
 
     useEffect(() => {
         console.log("Cloudinary URL:", cloudinaryUrl);
@@ -49,7 +48,7 @@ export default function CarouselDisplay() {
                 <h1 className="app-heading">
                 {sets[activeIndex % sets.length]}
                 </h1>
-                <Carousel images={images} onIndexChange={handleIndexChange} />
+                <Carousel images={cloudinaryUrl} onIndexChange={handleIndexChange} />
             </div>
             <div className="absolute w-1/5 right-0">
                 <div className="border-4 border-gray-300 mt-4 pt-4 text-end text-2xl font-bold">
@@ -57,7 +56,8 @@ export default function CarouselDisplay() {
                 </div>
             </div>
         </div>
-        <img src={cloudinaryUrl} alt="Food" />
+        <img src={cloudinaryUrl[activeIndex % cloudinaryUrl.length]} alt="Food" />
+        {/* <img src={cloudinaryUrl} alt="Food" /> */}
     </>
   )
 }
