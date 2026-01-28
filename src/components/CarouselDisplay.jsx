@@ -1,22 +1,21 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import Carousel from "./carousel/Carousel.jsx";
-
-import food1 from "../assets/Food1.png";
-import food2 from "../assets/Food2.jpg";
-import food3 from "../assets/Food3.jpg";
-import food4 from "../assets/Food4.jpg";
-import { Cloudinary } from '@cloudinary/url-gen';
-import {AdvancedImage} from '@cloudinary/react';
 
 export default function CarouselDisplay() {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const images = [
-    food1,
-    food2,
-    food3,
-    food4,
+    const food1 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/dailyMenu/set1/Food1";
+    const food2 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/dailyMenu/set2/Food2";
+    const food3 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/dailyMenu/set3/Food3";
+    const food4 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/dailyMenu/set4/Food4";
+
+    const cloudinaryUrl = [
+        food1,
+        food2,
+        food3,
+        food4,
     ];
+
     const sets = [
     "Set 1",
     "Set 2",
@@ -27,16 +26,7 @@ export default function CarouselDisplay() {
     const handleIndexChange = useCallback((index) => {
         setActiveIndex(index);
     }, []);
-    const cloudinaryUrl = [
-        "https://res.cloudinary.com/ddbnfzbgl/image/upload/set1/Food1",
-        "https://res.cloudinary.com/ddbnfzbgl/image/upload/set2/Food2",
-        "https://res.cloudinary.com/ddbnfzbgl/image/upload/set3/Food3",
-        "https://res.cloudinary.com/ddbnfzbgl/image/upload/set4/Food4",
-    ];
-
-    useEffect(() => {
-        console.log("Cloudinary URL:", cloudinaryUrl);
-    }, [cloudinaryUrl]);
+    
 
   return (
     <>
@@ -56,7 +46,14 @@ export default function CarouselDisplay() {
                 </div>
             </div>
         </div>
-        <img src={cloudinaryUrl[activeIndex % cloudinaryUrl.length]} alt="Food" />
+        <img
+            src={cloudinaryUrl[activeIndex % cloudinaryUrl.length]}
+            alt="Food"
+            onError={(e) => {
+                // eslint-disable-next-line no-console
+                console.error("Preview image failed to load:", e.currentTarget.src);
+            }}
+        />
         {/* <img src={cloudinaryUrl} alt="Food" /> */}
     </>
   )
