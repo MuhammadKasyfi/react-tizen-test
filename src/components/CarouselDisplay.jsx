@@ -8,6 +8,7 @@ export default function CarouselDisplay() {
     const food2 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/dailyMenu/set2/Food2";
     const food3 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/dailyMenu/set3/Food3";
     const food4 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/dailyMenu/set4/Food4";
+    const food5 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/dailyMenu/set4/Info";
 
     const cloudinaryUrl = [
         food1,
