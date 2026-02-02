@@ -1,0 +1,54 @@
+.MainScreen {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.MenuHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.FontBold {
+    font-weight: bold;
+}
+
+.UList {
+    align-items: center;
+    padding: 1rem;
+}
+
+.UList li {
+    font-size: 2.25rem;
+}
+
+.MenuContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.CarouselWrapper {
+    width: 50%;
+    align-self: center;
+}
+
+.MenuNoteContainer {
+    position: absolute;
+    width: 20%;
+    right: 0;
+}
+
+.MenuNoteContainer .NoteBox {
+    font-size: 1.5rem;
+    text-align: end;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-color: grey;
+    border: 1px solid grey;
+}
