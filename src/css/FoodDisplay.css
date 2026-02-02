@@ -35,7 +35,12 @@
 
 .CarouselWrapper {
     width: 50%;
+    height: 60vh;
     align-self: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
 }
 
 .MenuNoteContainer {

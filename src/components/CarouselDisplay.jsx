@@ -37,7 +37,7 @@ export default function CarouselDisplay() {
             <h1 className="app-heading">
                 Kaunter A
             </h1>
-            <div className="carousel-wrapper CarouselWrapper">
+            <div className="CarouselWrapper">
                 <h1 className="app-heading">
                 {sets[activeIndex % sets.length]}
                 </h1>
