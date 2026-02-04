@@ -33,18 +33,18 @@ export default function CarouselDisplay() {
 
   return (
     <>
-        <div className="MenuContainer">
+        <div className="menu-container">
             <h1 className="app-heading">
                 Kaunter A
             </h1>
-            <div className="CarouselWrapper">
+            <div className="carousel-wrapper">
                 <h1 className="app-heading">
                 {sets[activeIndex % sets.length]}
                 </h1>
                 <Carousel images={cloudinaryUrl} onIndexChange={handleIndexChange} />
             </div>
-            <div className="MenuNoteContainer">
-                <div className="NoteBox FontBold">
+            <div className="menu-note-container">
+                <div className="note-box FontBold">
                     Test
                 </div>
             </div>

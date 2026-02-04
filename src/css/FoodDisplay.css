@@ -26,30 +26,30 @@
     font-size: 2.25rem;
 }
 
-.MenuContainer {
+.menu-container {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
     text-align: center;
 }
 
-.CarouselWrapper {
-    width: 50%;
+/* .CarouselWrapper {
+    width: 60%;
     height: 60vh;
     align-self: center;
     border: 2px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-}
+} */
 
-.MenuNoteContainer {
+.menu-note-container {
     position: absolute;
     width: 20%;
     right: 0;
 }
 
-.MenuNoteContainer .NoteBox {
+.menu-note-container .note-box {
     font-size: 1.5rem;
     text-align: end;
     padding-top: 1rem;

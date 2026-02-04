@@ -1,16 +1,18 @@
 /* Carousel.css */
 
 .carousel-container {
-    max-width: 65vh;
+    /* position: relative; */
+    width: 100%;
+    max-width: min(92vw, 100vh);
     margin: 0 auto;
-    padding: 15px;
+    padding: clamp(8px, 2vw, 24px);
 }
 
 .carousel {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 50vh;
+    height: clamp(200px, 50vh, 520px);
 }
 
 .carousel-slide {
@@ -46,14 +48,15 @@
     padding: 10px;
     font-size: 18px;
     z-index: 1;
+    display: none;
 }
 
 .carousel-button.prev {
-    left: 10px;
+    left: clamp(8px, 1.5vw, 16px);
 }
 
 .carousel-button.next {
-    right: 10px;
+    right: clamp(8px, 1.5vw, 16px);
 }
 
 .app-container {
