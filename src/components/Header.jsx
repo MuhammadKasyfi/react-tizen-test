@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 export default function Header() {
   return (
     <>
-        <header className='MenuHeader'>
-        <h1 className="FontBold">
+        <header className='menu-header'>
+        <h1 className="font-bold">
             Food Menu Display
         </h1>
         </header>

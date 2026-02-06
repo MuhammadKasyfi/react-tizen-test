@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <section className='MainScreen'>
+      <section className='main-screen'>
         <Header />
         <Routes>
           <Route path='/' element={<CarouselDisplay />} />

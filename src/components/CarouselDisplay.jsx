@@ -43,10 +43,8 @@ export default function CarouselDisplay() {
                 </h1>
                 <Carousel images={cloudinaryUrl} onIndexChange={handleIndexChange} />
             </div>
-            <div className="menu-note-container">
-                <div className="note-box FontBold">
-                    Test
-                </div>
+            <div className="menu-note-container font-bold">
+                Test
             </div>
         </div>
     </>
