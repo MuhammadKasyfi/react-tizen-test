@@ -1,10 +1,24 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Carousel from "./carousel/Carousel.jsx";
+import { supabase } from '../utils/supabase.js';
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
+import { set } from "@cloudinary/url-gen/actions/variable";
 
 export default function CarouselDisplay() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [todos, setTodos] = useState([])
+
+    useEffect(() => {
+        async function getTodos() {
+            const { data: todos } = await supabase.from('FoodMenu').select()
+
+            if (todos.length > 1) {
+                setTodos(todos)
+            }
+        }
+        getTodos();
+    }, [])
 
     const food1 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/set1/Food1";
     const food2 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/set2/Food2";
@@ -44,7 +58,9 @@ export default function CarouselDisplay() {
                 <Carousel images={cloudinaryUrl} onIndexChange={handleIndexChange} />
             </div>
             <div className="menu-note-container font-bold">
-                Test
+                {todos.map((todo) => (
+                    <li key={todo}>{todo}</li>
+                ))}
             </div>
         </div>
     </>
