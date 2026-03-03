@@ -22,10 +22,10 @@ export default function CarouselDisplay() {
     }
 
 
-    const food1 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/set1/Food1";
-    const food2 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/set2/Food2";
-    const food3 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/set3/Food3";
-    const food4 = "https://res.cloudinary.com/ddbnfzbgl/image/upload/set4/Food4";
+    const food1 = `https://res.cloudinary.com/ddbnfzbgl/image/upload/set1/Food1?t=${Date.now()}`;
+    const food2 = `https://res.cloudinary.com/ddbnfzbgl/image/upload/set2/Food2?t=${Date.now()}`;
+    const food3 = `https://res.cloudinary.com/ddbnfzbgl/image/upload/set3/Food3?t=${Date.now()}`;
+    const food4 = `https://res.cloudinary.com/ddbnfzbgl/image/upload/set4/Food4?t=${Date.now()}`;
 
     const cloudinaryUrl = [
         food1,

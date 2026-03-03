@@ -2,17 +2,16 @@
 
 .carousel-container {
     /* position: relative; */
-    width: 100%;
-    max-width: min(92vw, 100vh);
-    margin: 0 auto;
-    padding: clamp(8px, 2vw, 24px);
+    width: 70vw;
+    margin: 2rem auto;
+    height: 70vh;
 }
 
 .carousel {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: clamp(200px, 50vh, 520px);
+    height: inherit;
 }
 
 .carousel-slide {
